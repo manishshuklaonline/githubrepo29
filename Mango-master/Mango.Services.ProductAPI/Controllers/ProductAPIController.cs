@@ -24,7 +24,7 @@ namespace Mango.Services.ProductAPI.Controllers
         [HttpGet]
         public async Task<object> Get()
         {
-            //Comments for v2
+            //Comments for v3
             try
             {
                 IEnumerable<ProductDto> productDtos = await _productRepository.GetProducts();
