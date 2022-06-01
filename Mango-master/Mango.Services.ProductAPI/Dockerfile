@@ -6,11 +6,11 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /src
-COPY ["ProductSolution.ProductAPI.csproj", "Mango.Services.ProductAPI/"]
-RUN dotnet restore "Mango.Services.ProductAPI/ProductSolution.ProductAPI.csproj"
+WORKDIR /app
+COPY . ./
+RUN dotnet restore "ProductSolution.ProductAPI.csproj"
 COPY . .
-WORKDIR "Mango.Services.ProductAPI"
+WORKDIR /app
 RUN dotnet build "ProductSolution.ProductAPI.csproj" -c Release -o /app/build
 
 FROM build AS publish
