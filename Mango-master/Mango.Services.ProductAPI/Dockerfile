@@ -7,7 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["Mango.Services.ProductAPI/ProductSolution.ProductAPI.csproj", "Mango.Services.ProductAPI/"]
+COPY ["ProductSolution.ProductAPI.csproj", "Mango.Services.ProductAPI/"]
 RUN dotnet restore "Mango.Services.ProductAPI/ProductSolution.ProductAPI.csproj"
 COPY . .
 WORKDIR "/src/Mango.Services.ProductAPI"
