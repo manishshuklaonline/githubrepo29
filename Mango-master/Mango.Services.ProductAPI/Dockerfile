@@ -11,7 +11,7 @@ COPY ["ProductSolution.ProductAPI.csproj", "Mango.Services.ProductAPI/"]
 RUN dotnet restore "Mango.Services.ProductAPI/ProductSolution.ProductAPI.csproj"
 COPY . .
 WORKDIR "/src/Mango.Services.ProductAPI"
-RUN dotnet build "ProductSolution.ProductAPI.csproj" -c Release -o /app/build
+#RUN dotnet build "ProductSolution.ProductAPI.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "ProductSolution.ProductAPI.csproj" -c Release -o /app/publish
